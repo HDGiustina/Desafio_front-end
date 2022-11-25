@@ -9,15 +9,15 @@
                 <label class="required" for="email">E-mail</label>
                 <input class="form-control" type="email" id="email" name="email">
                 <div class="col-sm-6">
-                    <label for="tel">Telefone</label>
+                    <label class="required" for="tel">Telefone</label>
                     <input @keyup="mascara('tel')" class="form-control col-md-2" type="tel" id="tel" name="tel" maxlength="14">
                 </div>
                 <div class="col-sm-6 ">
-                    <label for="cpf">CPF</label>
+                    <label class="required" for="cpf">CPF</label>
                     <input @keyup="mascara('cpf')" class="form-control col-md-4" type="text" id="cpf" name="cpf" maxlength="14">
                 </div>
                 <div class="col-sm-6">
-                    <label for="cep">CEP</label>
+                    <label class="required" for="cep">CEP</label>
                     <input @keyup="validaCEP" class="form-control" type="text" id="cep" name="cep" maxlength="9">
                 </div>
                 <div class="col-sm-6">
