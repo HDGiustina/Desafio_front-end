@@ -1,6 +1,7 @@
 <template>
   <main class="container-fluid">
     <CardCadastro />
+    
   </main>
 </template>
 
