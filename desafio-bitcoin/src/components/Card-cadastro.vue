@@ -1,6 +1,6 @@
 <template>
-    <div class="container d-flex justify-content-center align-items-center">
-        <div class="card p-4 d-flex flex-column">
+    <div class="d-flex justify-content-center align-items-center pt-5">
+        <div class="card p-5 d-flex flex-column">
             <h1>Cadastro de usuário</h1>
             <p>Utilize esse cadastro para fazer parte do maior site de trade de Bitcoin do mundo.</p>
             <form class="d-flex row g-1 form">
@@ -93,11 +93,6 @@
 </script>
 
 <style scoped>
-
-    .container {
-        height: 100vh;
-        width: 100%;
-    }
     .card{
         width: 440px;
         background-color: #ffffff;

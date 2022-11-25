@@ -18,8 +18,6 @@
 <style>
   .container-fluid {
     background-color: #5D6070;
-    height: 100vh;
-    width: 100%;
   }
 /* @media (min-width: 1024px) {
   

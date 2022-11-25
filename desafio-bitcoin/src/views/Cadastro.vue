@@ -1,7 +1,12 @@
 <template>
-  <main class="container-fluid">
+  <main class="container-fluid d-flex  align-items-center flex-column">
     <CardCadastro />
-    
+    <div class="cookie py-4 px-3">
+      <p class="">
+        Os cookies são utilizados para facilitar a navegação e torná-la mais simples e não danificam o seu dispositivo.
+        Permitem uma navegação mais rápida e eficiente, eliminando a necessidade de introduzir repetidamente as mesmas informações.
+      </p>
+    </div>
   </main>
 </template>
 
@@ -20,8 +25,12 @@
 <style scoped>
   .container-fluid {
     background-color: #5D6070;
-    height: 100vh;
-    width: 100%;
+  }
+
+  .cookie {
+    color: #ffffff;
+    width: 440px;
+    font-size: 14px;
   }
 
 </style>
