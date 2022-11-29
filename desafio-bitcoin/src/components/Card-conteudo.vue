@@ -3,8 +3,8 @@
         <div class="card m-5">
             <img class="card-img-top" :src="img" alt="teste">
             <div class="container-md p-5 pb-4" style=" font-size: 14px;">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non voluptas sequi iste, dolorum culpa, et doloribus distinctio provident vitae sint explicabo nobis pariatur vel sapiente reiciendis, at veniam cum.
+                <p class="texto">
+                    A origem do Bitcoin é tão interessante quanto a sua evolução no mercado. criada há uma década, a moeda virtual alcançou patamares históricos de cotações, atraindo ainda mais visibilidade para a economia digital e transformando a criptomoeda em <strong>um dos investimentos mais atrativos do momento.</strong>
                 </p>
             </div>
             <div class="p-4">
@@ -24,8 +24,8 @@
                 </div>
             </div>
             <div class="container-md p-5 pb-4" style=" font-size: 14px;">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non voluptas sequi iste, dolorum culpa, et doloribus distinctio provident vitae sint explicabo nobis pariatur vel sapiente reiciendis, at veniam cum.
+                <p class="pb-3 texto">
+                    O grande mistério do Bitcoin ainda não foi revelado. Afinal, quem inventou a criptomoeda? Existem várias versões, mas nenhuma conclusiva até o momento. O que se sabe é que o fundador usa o pseudônimo Satoshi Nakamoto.
                 </p>
             </div>
         </div>
@@ -85,5 +85,9 @@
 
     .dados p{
         font-size: 15px;
+    }
+
+    .texto{
+        color: #707070;
     }
 </style>
