@@ -1,11 +1,16 @@
 <template>
     <div class="container d-flex justify-content-center align-items-center">
-        <div class="card  d-flex ">
+        <div class="card m-5">
             <img class="card-img-top" :src="img" alt="teste">
+            <div class="container-md p-5 pb-4" style=" font-size: 14px;">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non voluptas sequi iste, dolorum culpa, et doloribus distinctio provident vitae sint explicabo nobis pariatur vel sapiente reiciendis, at veniam cum.
+                </p>
+            </div>
             <div class="p-4">
                 <div class="card dados p-4 w-auto h-auto">
                     <h1>Bitcoin Price Index</h1>
-                    <div class="p-3">
+                    <div v-if="(precoBitcoin != '')" class="p-2">
                         <p class="m-0">
                             {{ this.precoBitcoin.USD.description }}: ${{ this.precoBitcoin.USD.rate_float }}
                         </p>
@@ -17,6 +22,11 @@
                         </p>
                     </div>
                 </div>
+            </div>
+            <div class="container-md p-5 pb-4" style=" font-size: 14px;">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non voluptas sequi iste, dolorum culpa, et doloribus distinctio provident vitae sint explicabo nobis pariatur vel sapiente reiciendis, at veniam cum.
+                </p>
             </div>
         </div>
     </div>
@@ -31,36 +41,36 @@
                 img: '/img/Bitcoin-conteudo.png',
             }
         },
-        created() {
-            this.pegarDados()
-        },
         methods: {
             pegarDados(){
                 let url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
-                console.log('data')
                 fetch(url).then(
                     response => response.json()
                 ).then(
                     data => {
-                        console.log(data.bpi)
-                        this.precoBitcoin = data.bpi
+                        if(data){
+                            this.precoBitcoin = data.bpi
+                            this.precoBitcoin.USD.rate_float = this.precoBitcoin.USD.rate_float.toFixed(2)
+                            this.precoBitcoin.GBP.rate_float = this.precoBitcoin.GBP.rate_float.toFixed(2)
+                            this.precoBitcoin.EUR.rate_float = this.precoBitcoin.EUR.rate_float.toFixed(2)
+                        }
                     }
                 )
+               
             }
-        }
+        },
+        mounted() {
+            this.pegarDados()
+        },
     }
 </script>
 
 <style scoped>
-    .container {
-        height: 100vh;
-        width: 100%;
-    }
+    
     .card{
         width: 440px;
-        height: 600px;
         background-color: #ffffff;
-        border-radius: 8px;
+        border: none;
     }
 
     .dados{

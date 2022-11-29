@@ -144,9 +144,37 @@
                     this.validacao = false
                 } else if (valCPF.length != 11){
                     this.validacao = false
+                } else if (valCPF.length == 11){ // validação da sequência do CPF
+                    let Soma = 0
+                    let Resto
+                    let i
+                    if (valCPF == "00000000000") 
+                        this.validacao = false
+                    //Verificação do primeiro digito depois do - 
+                    for (i=1; i<=9; i++) {
+                        Soma = Soma + parseInt(valCPF.substring(i-1, i)) * (11 - i)
+                    }
+                    Resto = (Soma * 10) % 11;
+                    if ((Resto == 10) || (Resto == 11))  
+                        Resto = 0;
+                    if (Resto != parseInt(valCPF.substring(9, 10)) ) 
+                        this.validacao = false
+
+                    //Verificação do segundo digito depois do - 
+                    Soma = 0;
+                    for (i = 1; i <= 10; i++) {
+                        Soma = Soma + parseInt(valCPF.substring(i-1, i)) * (12 - i);
+                    }
+                    Resto = (Soma * 10) % 11;
+                    if ((Resto == 10) || (Resto == 11))  
+                        Resto = 0;
+                    if (Resto != parseInt(valCPF.substring(10, 11) ) ) 
+                        this.validacao = false
                 } else if(obrigatorios.cep === undefined || this.valCEP == false){
                     this.validacao = false
                 }
+
+                
             },
         },
     }
